@@ -16,7 +16,8 @@
     "lib": ["es2022", "dom", "dom.iterable"],
     "composite": true,
     "declarationMap": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "types": ["jest", "@testing-library/jest-dom"]
   },
   "include": ["src"]
 }
