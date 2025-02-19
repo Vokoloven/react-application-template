@@ -54,6 +54,11 @@ body {
   transition:
     background-color 0.3s,
     transform 0.3s;
+
+  & > span {
+    font-size: 20px;
+    font-weight: bold;
+  }
 }
 
 .start-button:hover {
