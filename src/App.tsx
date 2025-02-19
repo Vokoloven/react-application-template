@@ -2,6 +2,7 @@ const App = () => {
   return (
     <>
       <div>React Application Template</div>
+      <div>Test</div>
     </>
   );
 };
