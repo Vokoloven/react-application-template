@@ -5,6 +5,7 @@ const commonConfig = require('./webpack.common');
 const path = require('path');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = () => {
   const prodConfig = {
@@ -36,6 +37,10 @@ module.exports = () => {
           removeComments: true,
           collapseWhitespace: true
         }
+      }),
+      new BundleAnalyzerPlugin({
+        analyzerMode: 'static',
+        openAnalyzer: false
       }),
       new MiniCssExtractPlugin()
     ],

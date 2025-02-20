@@ -1,5 +1,5 @@
 {
-  "name": "react-app-template",
+  "name": "react-application-template",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -14,13 +14,25 @@
     "test:coverage": "jest --coverage"
   },
   "lint-staged": {
-    "*.{ts,tsx}": "eslint",
-    "*.{js,ts,tsx,css,scss,json}": "prettier --write"
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{js,css,scss,json}": "prettier --write"
   },
-  "keywords": [],
+  "keywords": [
+    "react",
+    "webpack",
+    "typescript",
+    "template",
+    "eslint",
+    "prettier",
+    "jest",
+    "husky"
+  ],
   "author": "Ruslan Volovenko",
   "license": "ISC",
-  "description": "React Application Template",
+  "description": "A customizable React application template with Webpack, TypeScript, ESLint, Prettier, Jest, and Husky.",
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
@@ -69,6 +81,7 @@
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.24.1",
     "webpack": "^5.98.0",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0"
   }
