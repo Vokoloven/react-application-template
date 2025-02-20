@@ -9,14 +9,21 @@ module.exports = () => {
     output: {
       publicPath: 'http://localhost:3000/',
       filename: '[name].js',
-      clean: true
+      chunkFilename: '[name].chunk.js'
     },
     devServer: {
       port: 3000,
       open: true,
       hot: true,
-      liveReload: true,
-      historyApiFallback: true
+      liveReload: false,
+      historyApiFallback: true,
+      client: {
+        logging: 'info',
+        overlay: true
+      },
+      devMiddleware: {
+        stats: 'minimal'
+      }
     },
     plugins: [
       new Dotenv({
