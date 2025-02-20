@@ -10,7 +10,7 @@ module.exports = async () => {
 
   try {
     port = await detect(defaultPort);
-    console.log(`Requested port: ${defaultPort}, Assigned port: ${port}`);
+    console.log(`Dev server starting on http://localhost:${port} (Requested: ${defaultPort})`);
   } catch (err) {
     console.error('Error detecting free port:', err);
     port = defaultPort + 1;
@@ -19,6 +19,7 @@ module.exports = async () => {
 
   const devConfig = {
     mode: 'development',
+    devtool: 'eval-cheap-module-source-map',
     output: {
       publicPath: `http://localhost:${port}/`,
       filename: '[name].js',
@@ -38,9 +39,17 @@ module.exports = async () => {
         stats: 'minimal'
       }
     },
+    module: {
+      rules: [
+        {
+          test: /\.(sa|sc|c)ss$/i,
+          use: ['style-loader', 'css-loader', 'sass-loader']
+        }
+      ]
+    },
     plugins: [
       new Dotenv({
-        path: './.env.local',
+        path: './.env.dev',
         safe: true
       }),
       new HtmlWebpackPlugin({

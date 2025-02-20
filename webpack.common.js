@@ -1,5 +1,4 @@
 const InterpolateHtmlPlugin = require('interpolate-html-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
@@ -17,23 +16,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(sa|sc|c)ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
-      },
-      {
         test: /\.tsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          presets: [
-            [
-              '@babel/preset-react',
-              {
-                runtime: 'automatic'
-              }
-            ],
-            '@babel/preset-typescript'
-          ]
+          presets: [['@babel/preset-react', { runtime: 'automatic' }], '@babel/preset-typescript'],
+          cacheDirectory: true
         }
       },
       {
@@ -47,5 +35,17 @@ module.exports = {
       }
     ]
   },
-  plugins: [new InterpolateHtmlPlugin({ PUBLIC_URL: '' }), new MiniCssExtractPlugin()]
+  plugins: [new InterpolateHtmlPlugin({ PUBLIC_URL: process.env.PUBLIC_URL ?? '' })],
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    }
+  }
 };
