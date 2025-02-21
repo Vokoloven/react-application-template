@@ -24,66 +24,48 @@ A customizable React application template built with Webpack, TypeScript, ESLint
 
 ## Installation
 
-1. Clone the repository:
+## Installation
 
-   ```bash
-   git clone https://github.com/Vokoloven/react-application-template
-   cd react-application-template
-   ```
+1. Clone the repository from GitLab:
 
-2. Install dependencies:
+```bash
+git clone https://github.com/Vokoloven/react-application-template
+```
 
-   ```bash
-   npm install
-   ```
+2. Open the repository
+
+```bash
+cd react-application-template
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
 
 ## Scripts
 
-| Command                 | Description                        |
-| ----------------------- | ---------------------------------- |
-| `npm start`             | Starts the development server      |
-| `npm run build`         | Builds the app for production      |
-| `npm run lint`          | Runs ESLint on the `src` directory |
-| `npm run lint:fix`      | Fixes linting issues in `src`      |
-| `npm run format`        | Formats all files with Prettier    |
-| `npm test`              | Runs Jest tests                    |
-| `npm run test:coverage` | Runs tests with coverage report    |
+| Command                 | Description                            |
+|-------------------------|----------------------------------------|
+| `npm start`             | Starts the development server          |
+| `npm run build`         | Builds the app for production          |
+| `npm run lint`          | Runs ESLint on the `src` directory     |
+| `npm run lint:fix`      | Fixes linting issues in `src`          |
+| `npm run format`        | Formats all files with Prettier        |
+| `npm test`              | Runs Jest tests                        |
+| `npm run test:coverage` | Runs tests with coverage report        |
 
 ## Usage
 
-1. Development:
+- To start development, run `npm start` — this opens `http://localhost:3000` (or the next available port) with Hot Module Replacement enabled.
+- For a production build, use `npm run build` to output the optimized bundle to the `build/` directory.
+- To run tests, execute `npm test` for unit tests or `npm run test:coverage` for a detailed coverage report.
 
-```bash
-npm start
-```
+## Specific Notes
 
-Opens http://localhost:3000 (or the next available port).
-
-2. Production Build:
-
-```bash
-npm run build
-```
-
-Outputs to the build/ directory.
-
-3. Testing
-
-```bash
-npm test
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit changes
-4. Push to the branch
-5. Open a Pull Request
-
-Husky and lint-staged are configured to enforce code quality on commits. For details on branch naming and commit message conventions, please refer to the configuration files (e.g., [`.husky`](./.husky) and [`commitlint.config.mjs`](./commitlint.config.mjs)).
-
-Husky and lint-staged will enforce code quality on commits.
+- **Pre-Commit Hooks**: Husky and lint-staged enforce code quality on every commit. See [`.husky`](./.husky/) and [`commitlint.config.mjs`](./commitlint.config.mjs) for branch naming and commit message conventions.
+- **Merge Requests**: Contributions should follow GitLab’s Merge Request workflow. Refer to the [contribution guidelines](#) (add link if applicable).
 
 ## License
 
