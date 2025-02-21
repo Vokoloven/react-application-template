@@ -32,6 +32,11 @@
   ],
   "author": "Ruslan Volovenko",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vokoloven/react-application-template.git"
+  },
+  "homepage": "https://github.com/vokoloven/react-application-template#readme",
   "description": "A customizable React application template with Webpack, TypeScript, ESLint, Prettier, Jest, and Husky.",
   "dependencies": {
     "react": "^18.3.1",
