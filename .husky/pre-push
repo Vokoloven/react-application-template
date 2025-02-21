@@ -1,0 +1,25 @@
+local_branch_name="$(git rev-parse --abbrev-ref HEAD)"
+valid_branch_regex="^(?:(DEV|STG|PRD)\/)?(feature|fix|hotfix)\/TFS-[0-9]{5}-[a-zA-Z0-9-]+$|^(?:(DEV|STG|PRD)\/)?(hotfix)-[a-zA-Z0-9-]+$"
+
+message="❌ Branch name $local_branch_name does not follow the naming convention. Use one of the following formats:
+
+    - 'feature/TFS-00000-description'
+    - 'fix/TFS-00000-description'
+    - 'hotfix/TFS-00000-description'
+    - 'hotfix-description'
+
+    Optionally, you can add an environment prefix (DEV, STG, PRD):
+
+    - 'DEV/feature/TFS-00000-description'
+    - 'STG/fix/TFS-00000-description'
+    - 'PRD/hotfix/TFS-00000-description'
+    - 'DEV/hotfix-description'
+
+    Please rename your branch to match the required format."
+
+if ! echo "$local_branch_name" | grep -E "$valid_branch_regex" > /dev/null; then
+    echo "$message"
+    exit 1
+fi
+
+exit 0
