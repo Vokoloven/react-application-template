@@ -81,7 +81,7 @@ npm test
 4. Push to the branch
 5. Open a Pull Request
 
-Husky and lint-staged are configured to enforce code quality on commits. For details on branch naming and commit message conventions, please refer to the configuration files (e.g., [`.husky` scripts](./.husky/pre-commit) and [`commitlint.config.js`](./commitlint.config.js)).
+Husky and lint-staged are configured to enforce code quality on commits. For details on branch naming and commit message conventions, please refer to the configuration files (e.g., [`.husky` scripts](./.husky/pre-commit) and [`commitlint.config.js`](./commitlint.config.mjs)).
 
 Husky and lint-staged will enforce code quality on commits.
 
