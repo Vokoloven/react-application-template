@@ -46,15 +46,15 @@ npm install
 
 ## Scripts
 
-| Command                 | Description                            |
-|-------------------------|----------------------------------------|
-| `npm start`             | Starts the development server          |
-| `npm run build`         | Builds the app for production          |
-| `npm run lint`          | Runs ESLint on the `src` directory     |
-| `npm run lint:fix`      | Fixes linting issues in `src`          |
-| `npm run format`        | Formats all files with Prettier        |
-| `npm test`              | Runs Jest tests                        |
-| `npm run test:coverage` | Runs tests with coverage report        |
+| Command                 | Description                        |
+| ----------------------- | ---------------------------------- |
+| `npm start`             | Starts the development server      |
+| `npm run build`         | Builds the app for production      |
+| `npm run lint`          | Runs ESLint on the `src` directory |
+| `npm run lint:fix`      | Fixes linting issues in `src`      |
+| `npm run format`        | Formats all files with Prettier    |
+| `npm test`              | Runs Jest tests                    |
+| `npm run test:coverage` | Runs tests with coverage report    |
 
 ## Usage
 
@@ -65,7 +65,6 @@ npm install
 ## Specific Notes
 
 - **Pre-Commit Hooks**: Husky and lint-staged enforce code quality on every commit. See [`.husky`](./.husky/) and [`commitlint.config.mjs`](./commitlint.config.mjs) for branch naming and commit message conventions.
-- **Merge Requests**: Contributions should follow GitLab’s Merge Request workflow. Refer to the [contribution guidelines](#) (add link if applicable).
 
 ## License
 
