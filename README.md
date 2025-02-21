@@ -27,7 +27,7 @@ A customizable React application template built with Webpack, TypeScript, ESLint
 1. Clone the repository:
 
    ```bash
-   git clone <https://github.com/Vokoloven/react-application-template>
+   git clone https://github.com/Vokoloven/react-application-template
    cd react-application-template
    ```
 
